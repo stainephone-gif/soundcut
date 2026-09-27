@@ -2,11 +2,12 @@
 rem Запуск ПК-версии SoundCut без Android Studio
 chcp 65001 >nul
 cd /d "%~dp0"
-set "JAVA_EXE=java"
-if defined JAVA_HOME set "JAVA_EXE=%JAVA_HOME%\bin\java"
+rem Gradle берёт Java из JAVA_HOME, поэтому проверяем именно её.
+if defined JAVA_HOME set "PATH=%JAVA_HOME%\bin;%PATH%"
 set "JMAJ="
-for /f "tokens=3" %%v in ('"%JAVA_EXE%" -version 2^>^&1 ^| findstr /i "version"') do set "JV=%%~v"
-for /f "delims=." %%m in ("%JV%") do set "JMAJ=%%m"
+set "JV="
+for /f "tokens=3" %%v in ('java -version 2^>^&1 ^| findstr /i version') do set "JV=%%~v"
+if defined JV for /f "delims=." %%m in ("%JV%") do set "JMAJ=%%m"
 if not defined JMAJ (
   echo Java не найдена. Установите JDK 21: https://adoptium.net/temurin/releases/?version=21
   echo При установке включите пункт "Set JAVA_HOME variable".
