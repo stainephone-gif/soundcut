@@ -39,6 +39,11 @@
 точнее. Модель скачивается из программы одной кнопкой (один раз, дальше всё офлайн)
 или указывается готовым zip-архивом. Файлы можно просто перетащить в окно.
 
+**Без Android Studio:** нужны только Git и JDK 17 или новее (например, Temurin с
+https://adoptium.net — при установке включите «Set JAVA_HOME»). Двойной щелчок по
+`run-desktop.bat` запускает программу, `build-desktop.bat` собирает `SoundCut.exe`
+и установщик `.msi`.
+
 **Запуск из Android Studio / IntelliJ IDEA:** панель Gradle → SoundCut → desktop →
 Tasks → compose desktop → `run`. Или в терминале в папке проекта:
 
