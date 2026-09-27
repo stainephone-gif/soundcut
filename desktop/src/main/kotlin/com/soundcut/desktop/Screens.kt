@@ -332,9 +332,13 @@ private fun ProgressScreen(state: UiState, onCancel: () -> Unit) {
         Column(Modifier.widthIn(max = 520.dp).padding(32.dp), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(state.stepText, style = MaterialTheme.typography.titleMedium)
             Spacer(Modifier.height(16.dp))
-            LinearProgressIndicator(progress = { state.progress }, modifier = Modifier.fillMaxWidth())
-            Spacer(Modifier.height(8.dp))
-            Text("${(state.progress * 100).roundToInt()} %")
+            if (state.progress < 0f) {
+                LinearProgressIndicator(Modifier.fillMaxWidth())
+            } else {
+                LinearProgressIndicator(progress = { state.progress }, modifier = Modifier.fillMaxWidth())
+                Spacer(Modifier.height(8.dp))
+                Text("${(state.progress * 100).roundToInt()} %")
+            }
             Spacer(Modifier.height(24.dp))
             OutlinedButton(onClick = onCancel) { Text("Отменить") }
         }

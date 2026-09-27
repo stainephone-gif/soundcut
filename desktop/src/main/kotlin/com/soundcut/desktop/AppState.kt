@@ -162,7 +162,8 @@ class AppState(private val scope: CoroutineScope) {
         step("Подготовка звука")
         audio16k = AnalysisDecoder.decode(audio, info) { progress(it) }
 
-        step("Загрузка модели распознавания")
+        step("Загрузка модели распознавания (быстрая — несколько секунд, точная — 1–3 минуты)")
+        _state.update { it.copy(progress = -1f) } // ход загрузки неизвестен
         try {
             speech.load(modelDir)
         } catch (e: Throwable) {
