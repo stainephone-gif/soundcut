@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Звуковая волна с «ножницами»-разрывом посередине -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,48h4v12h-4z M37,40h4v28h-4z M44,34h4v40h-4z M60,36h4v36h-4z M67,42h4v24h-4z M74,48h4v12h-4z" />
+    <path
+        android:fillColor="#FF7A59"
+        android:pathData="M51,30h6v48h-6z" />
+</vector>
