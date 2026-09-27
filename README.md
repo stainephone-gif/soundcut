@@ -16,6 +16,9 @@ Android-приложение для чистки дикторских запис
 
 ## Как собрать в Android Studio
 
+0. **Путь к папке проекта должен быть только из латинских букв, без пробелов и кириллицы**,
+   например `D:\Projects\soundcut`. Иначе сборка остановится с ошибкой
+   «Your project path contains non-ASCII characters».
 1. Откройте папку проекта в Android Studio (File → Open) и дождитесь синхронизации Gradle.
 2. Подключите телефон (или запустите эмулятор) и нажмите **Run ▶**.
    Чтобы получить APK-файл: **Build → Build App Bundle(s) / APK(s) → Build APK(s)**,
